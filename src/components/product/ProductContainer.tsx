@@ -34,7 +34,7 @@ const ProductContainer = async ({ title }: ProductContainerProps) => {
         </div>
 
         <div className="m-auto w-fit mt-8">
-          <Button>Ver Mais</Button>
+          <Button border size="xl">Ver Mais</Button>
         </div>
       </Container>
     </section>
