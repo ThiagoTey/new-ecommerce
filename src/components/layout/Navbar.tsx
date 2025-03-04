@@ -2,12 +2,13 @@ import Link from "next/link";
 import React from "react";
 import Search from "./Search";
 import NavIcons from "./NavIcons";
+import Logo from "../ui/Logo";
 
 const Navbar = () => {
   return (
-    <header className="w-full h-24 bg-gray-100 flex items-center px-16 gap-x-8">
+    <header className="w-full h-24 bg-gray-100 flex items-center px-24 gap-x-8">
       <div>
-        <h1 className="text-3xl font-bold">SHOPP.ING</h1>
+        <Logo />
       </div>
       <div className="gap-x-4 flex font-medium">
         <Link href={"/"}>Em Promoção</Link>

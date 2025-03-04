@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Montserrat, Lora } from "next/font/google";
+import { Montserrat, Poppins } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/layout/Footer";
 import Navbar from "@/components/layout/Navbar";
@@ -14,9 +14,10 @@ const montserrat = Montserrat({
   subsets: ["latin"],
 });
 
-const lora = Lora({
-  variable: "--font-lora",
+const poppins = Poppins({
+  variable: "--font-poppins",
   subsets: ["latin"],
+  weight: ["100" , "200" , "300" , "400" , "500" , "600" , "700" , "800" , "900"],
 });
 
 export default function RootLayout({
@@ -27,7 +28,7 @@ export default function RootLayout({
   return (
     <html lang="pt-br">
       <body
-        className={`${montserrat.variable} ${lora.variable} antialiased`}
+        className={`${montserrat.variable} ${poppins.variable} antialiased`}
       >
         <Navbar/>
         {children}

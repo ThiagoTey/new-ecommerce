@@ -28,5 +28,5 @@ p, span, li {
 body {
   /* color: var(--foreground);
   background: var(--background); */
-  font-family: var(--font-lora), serif;
+  font-family: var(--font-poppins), serif;
 } 
