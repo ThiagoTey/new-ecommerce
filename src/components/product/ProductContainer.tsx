@@ -25,7 +25,7 @@ const ProductContainer = async ({ title }: ProductContainerProps) => {
   return (
     <section className="mt-16">
       <Container>
-        <h3 className="text-4xl w-fit font-bold m-auto">{title}</h3>
+        <h3 className="text-5xl w-fit font-extrabold m-auto">{title}</h3>
 
         <div className="flex gap-5 justify-between mt-8">
           {products.slice(0,4).map((product: ProductType) => (
@@ -36,6 +36,8 @@ const ProductContainer = async ({ title }: ProductContainerProps) => {
         <div className="m-auto w-fit mt-8">
           <Button border size="xl">Ver Mais</Button>
         </div>
+
+        <div className="w-full bg-gray-200 h-0.5 mt-16"/>
       </Container>
     </section>
   );
