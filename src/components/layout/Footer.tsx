@@ -2,6 +2,7 @@ import Image from "next/image";
 import React, { ReactNode } from "react";
 import Logo from "../ui/Logo";
 import Link from "next/link";
+import Container from "./Container";
 
 const DetailContainer: React.FC<{ children: React.ReactNode }> = ({
   children,
@@ -20,7 +21,8 @@ const CustomLink = ({ link, children }: CustomLinkProps) => {
 
 const Footer = () => {
   return (
-    <footer className="mt-28 w-full bg-gray-100 px-24 py-8 grid grid-cols-4 gap-20">
+    <footer >
+      <Container className="mt-28 w-full bg-gray-100 py-8 grid grid-cols-4 gap-20">
       {/* Primeiro a esquerda */}
       <DetailContainer>
         <Logo />
@@ -59,8 +61,9 @@ const Footer = () => {
           Perguntas Frequentes
         </h4>
         <CustomLink link="/">Pedidos</CustomLink>
-        <CustomLink link="/">Pagamenots</CustomLink>
+        <CustomLink link="/">Pagamentos</CustomLink>
       </DetailContainer>
+      </Container>
     </footer>
   );
 };
