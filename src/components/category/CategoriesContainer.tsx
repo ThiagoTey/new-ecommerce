@@ -11,8 +11,8 @@ const CategoriesContainer = () => {
   return (
     <section className="mt-16">
       <Container className="bg-amber-50 rounded-3xl">
-        <h3>Procure Estilos</h3>
-        <div className="flex">
+        <h3>NAVEGUE POR QUALQUER ESTILO</h3>
+        <div className="flex relative">
             {mock.map((category, index) => (
             <div className={`h-[300px] ${index%2 == 0 ? 'w-[500px]' : 'w-[700px]'}`} key={category.title}>
                 <Category

@@ -3,6 +3,7 @@ import Container from "../layout/Container";
 import ProductCard from "./ProductCard";
 import { ProductType } from "@/types/ProductType";
 import Button from "../ui/Button";
+import Title from "../typography/Title";
 
 type ProductContainerProps = {
   title: string;
@@ -25,7 +26,7 @@ const ProductContainer = async ({ title }: ProductContainerProps) => {
   return (
     <section className="mt-16">
       <Container>
-        <h3 className="text-5xl w-fit font-extrabold m-auto">{title}</h3>
+        <Title as="h3" size="2xl" className="w-fit m-auto">{title}</Title>
 
         <div className="flex gap-5 justify-between mt-8">
           {products.slice(0,4).map((product: ProductType) => (

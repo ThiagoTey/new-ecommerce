@@ -10,7 +10,6 @@ type Props = {
 const sizeClasses = {
   base: "px-4 py-2",
   xl: "px-12 py-3 text-xl font-medium",
-
 };
 
 const Button = ({ children, border, size = "base", black, ...rest }: Props) => {
