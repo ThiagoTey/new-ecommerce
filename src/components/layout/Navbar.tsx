@@ -7,14 +7,14 @@ import Container from "./Container";
 
 const Navbar = () => {
   return (
-    <nav>
-      <Container className="w-full h-24 bg-gray-100 flex items-center gap-x-8">
+    <nav className="bg-gray-100">
+      <Container className="w-full h-24  flex items-center gap-x-8">
         <div>
           <Logo />
         </div>
         <div className="gap-x-4 flex font-medium">
-          <Link href={"/"}>Em Promoção</Link>
-          <Link href={"/"}>Novidades</Link>
+          <Link href={"/"}>Inicio</Link>
+          <Link href={"/"}>Comprar</Link>
           <Link href={"/"}>Mais Vendidos</Link>
         </div>
         <Search />
