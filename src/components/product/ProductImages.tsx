@@ -1,9 +1,12 @@
 "use client";
 
+import { ProductType } from "@/types/ProductType";
 import Image from "next/image";
 import { useState } from "react";
 
-type Props = {};
+type ProductImagesProps = {
+    product: ProductType;
+};
 
 const imagesMock = [
   {
@@ -14,9 +17,11 @@ const imagesMock = [
   },
 ];
 
-const ProductImages = (props: Props) => {
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+const ProductImages = ({ product } : ProductImagesProps) => {
   const [selectedIndex, setSelectedIndex] = useState(0);
-
+    
+  //Utilizar dados do produto depois
   return (
     <div className="flex flex-1/2">
       <div className="flex flex-col gap-3">

@@ -19,8 +19,8 @@ const Product = async ({ params }: { params: { id: string } }) => {
   return (
     <main>
       <Container className="mt-16 flex gap-8">
-        <ProductImages />
-        <ProductDetails />
+        <ProductImages product={product}/>
+        <ProductDetails product={product}/>
       </Container>
     </main>
   );

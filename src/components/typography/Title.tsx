@@ -9,7 +9,7 @@ type TitleProps = {
 
 const sizeClasses = {
     base : "",
-    xl : "",
+    xl : "text-3xl",
     "2xl" : "text-5xl ",
 }
 
