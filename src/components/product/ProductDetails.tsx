@@ -19,6 +19,7 @@ const ProductDetails = ({ product }: ProductDetailsProps) => {
     <ColorSelector />
 
     <div className="w-full bg-gray-200 h-0.5"/>
+    
     <Selector title="Tamanho"/>
   </div>;
 };
