@@ -2,6 +2,7 @@ import React, { ButtonHTMLAttributes } from "react";
 
 type Props = {
   children: React.ReactNode;
+  className?: string;
   black?: boolean;
   size?: "base" | "xl";
   border?: boolean;
@@ -12,7 +13,7 @@ const sizeClasses = {
   xl: "px-12 py-3 text-xl font-medium",
 };
 
-const Button = ({ children, border, size = "base", black, ...rest }: Props) => {
+const Button = ({ children, border, className, size = "base", black, ...rest }: Props) => {
   const paddingClasses = sizeClasses[size];
 
   return (
@@ -22,7 +23,7 @@ const Button = ({ children, border, size = "base", black, ...rest }: Props) => {
         border && "border-[1px]"
       } border-gray-300 ${
         black && "bg-black text-white hover:bg-gray-700"
-      } py-2 px-4 rounded-4xl  ${paddingClasses}`}
+      } py-2 px-4 rounded-4xl  ${paddingClasses} ${className}`}
     >
       {children}
     </button>

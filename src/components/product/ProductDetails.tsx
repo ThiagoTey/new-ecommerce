@@ -3,25 +3,41 @@ import React from "react";
 import Title from "../typography/Title";
 import ColorSelector from "../ui/ColorSelector";
 import Selector from "../ui/Selector";
+import QuantitySelector from "../ui/QuantitySelector";
+import Button from "../ui/Button";
 
 type ProductDetailsProps = {
   product: ProductType;
 };
 
+const SplitBar = () => {
+  return <div className="w-full bg-gray-200 h-0.5" />;
+};
+
 const ProductDetails = ({ product }: ProductDetailsProps) => {
-  return <div className="flex flex-1/2 flex-col gap-3">
-    <Title as="h1" size="xl">{product.title}</Title>
-    <span className="text-3xl font-medium">R$ {product.price}</span>
-    <p>{product.description}</p>
+  return (
+    <div className="flex flex-1/2 flex-col gap-3">
+      <Title as="h1" size="xl">
+        {product.title}
+      </Title>
+      <span className="text-3xl font-medium">R$ {product.price}</span>
+      <p>{product.description}</p>
 
-    <div className="w-full bg-gray-200 h-0.5"/>
+      <SplitBar />
+      <ColorSelector />
+      <SplitBar />
+      <Selector title="Tamanho" />
+      <SplitBar />
 
-    <ColorSelector />
-
-    <div className="w-full bg-gray-200 h-0.5"/>
-    
-    <Selector title="Tamanho"/>
-  </div>;
+      <div className="flex w-full gap-2">
+        <QuantitySelector />
+        <Button black className="w-full">
+          {" "}
+          Comprar{" "}
+        </Button>
+      </div>
+    </div>
+  );
 };
 
 export default ProductDetails;
