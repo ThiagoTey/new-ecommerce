@@ -5,13 +5,10 @@ import ColorSelector from "../ui/ColorSelector";
 import Selector from "../ui/Selector";
 import QuantitySelector from "../ui/QuantitySelector";
 import Button from "../ui/Button";
+import SplitBar from "../ui/SplitBar";
 
 type ProductDetailsProps = {
   product: ProductType;
-};
-
-const SplitBar = () => {
-  return <div className="w-full bg-gray-200 h-0.5" />;
 };
 
 const ProductDetails = ({ product }: ProductDetailsProps) => {

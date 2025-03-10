@@ -3,6 +3,7 @@ import ProductContainer from "@/components/product/ProductContainer";
 import ProductDescription from "@/components/product/ProductDescription";
 import ProductDetails from "@/components/product/ProductDetails";
 import ProductImages from "@/components/product/ProductImages";
+import SplitBar from "@/components/ui/SplitBar";
 
 async function getProduct(productId: string) {
   const apiLink = `https://fakestoreapi.com/products/${productId}`;
@@ -26,7 +27,7 @@ const Product = async ({ params }: { params: { id: string } }) => {
       </Container>
       <Container className="mt-16">
         <p className="font-bold text-xl">Descrição do produto</p>
-        <div className="w-full bg-gray-200 h-0.5 mt-4" />
+        <SplitBar />
         <ProductDescription />
       </Container>
 

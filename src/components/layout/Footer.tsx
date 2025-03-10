@@ -1,8 +1,7 @@
 import Image from "next/image";
-import React, { ReactNode } from "react";
 import Logo from "../ui/Logo";
-import Link from "next/link";
 import Container from "./Container";
+import CustomLink from "../ui/CustomLink";
 
 const DetailContainer: React.FC<{ children: React.ReactNode }> = ({
   children,
@@ -10,22 +9,6 @@ const DetailContainer: React.FC<{ children: React.ReactNode }> = ({
   return <div className="gap-y-7 flex flex-col">{children}</div>;
 };
 
-type CustomLinkProps = {
-  link: string;
-  children: ReactNode;
-};
-
-const CustomLink = ({ link, children }: CustomLinkProps) => {
-  return (
-    <Link
-      className="text-xl font-light text-gray-600 hover:underline"
-      href={link}
-    >
-      {" "}
-      {children}
-    </Link>
-  );
-};
 
 const Footer = () => {
   return (
@@ -50,17 +33,17 @@ const Footer = () => {
         {/* Segundo */}
         <DetailContainer>
           <h4 className="tracking-wider font-medium text-xl">Empresa</h4>
-          <CustomLink link="/">Sobre</CustomLink>
-          <CustomLink link="/">Recursos</CustomLink>
-          <CustomLink link="/">Trabalho</CustomLink>
+          <CustomLink href="/">Sobre</CustomLink>
+          <CustomLink href="/">Recursos</CustomLink>
+          <CustomLink href="/">Trabalho</CustomLink>
         </DetailContainer>
 
         {/* Terceiro */}
         <DetailContainer>
           <h4 className="tracking-wider font-medium text-xl">Ajuda</h4>
-          <CustomLink link="/">Suporte</CustomLink>
-          <CustomLink link="/">Contato</CustomLink>
-          <CustomLink link="/">Termos & Condições</CustomLink>
+          <CustomLink href="/">Suporte</CustomLink>
+          <CustomLink href="/">Contato</CustomLink>
+          <CustomLink href="/">Termos & Condições</CustomLink>
         </DetailContainer>
 
         {/* Quarto */}
@@ -68,8 +51,8 @@ const Footer = () => {
           <h4 className="tracking-wider font-medium text-xl">
             Perguntas Frequentes
           </h4>
-          <CustomLink link="/">Pedidos</CustomLink>
-          <CustomLink link="/">Pagamentos</CustomLink>
+          <CustomLink href="/">Pedidos</CustomLink>
+          <CustomLink href="/">Pagamentos</CustomLink>
         </DetailContainer>
       </Container>
     </footer>
