@@ -42,3 +42,32 @@ body {
 .no-spinner {
   -moz-appearance: textfield;
 }
+
+/* gProduct description classes */
+.product-description {
+  @apply flex flex-col gap-3 mt-4
+}
+
+.product-description h1 {
+  @apply text-3xl font-bold mb-2;
+}
+
+.product-description h2 {
+  @apply text-2xl font-bold mb-2;
+}
+
+.product-description p {
+  @apply text-base text-gray-700 leading-relaxed;
+}
+
+.product-description ul {
+  @apply list-disc pl-5;
+}
+
+.product-description a {
+  @apply text-blue-600 underline;
+}
+
+.product-description img {
+  @apply rounded-lg mt-3;
+}

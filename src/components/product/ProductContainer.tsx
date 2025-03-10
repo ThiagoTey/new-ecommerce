@@ -7,6 +7,7 @@ import Title from "../typography/Title";
 
 type ProductContainerProps = {
   title: string;
+  showMoreButton?: boolean;
 };
 
 async function getProducts() {
@@ -19,26 +20,34 @@ async function getProducts() {
   return res.json();
 }
 
-const ProductContainer = async ({ title }: ProductContainerProps) => {
+const ProductContainer = async ({
+  title,
+  showMoreButton = true,
+}: ProductContainerProps) => {
   const products = await getProducts();
-
 
   return (
     <section className="mt-16">
       <Container>
-        <Title as="h3" size="2xl" className="w-fit m-auto">{title}</Title>
+        <Title as="h3" size="2xl" className="w-fit m-auto">
+          {title}
+        </Title>
 
         <div className="flex gap-5 justify-between mt-8">
-          {products.slice(0,4).map((product: ProductType) => (
-            <ProductCard product={product} key={product.id}/>
+          {products.slice(0, 4).map((product: ProductType) => (
+            <ProductCard product={product} key={product.id} />
           ))}
         </div>
 
-        <div className="m-auto w-fit mt-8">
-          <Button border size="xl">Ver Mais</Button>
-        </div>
+        {showMoreButton && (
+          <div className="m-auto w-fit mt-8">
+            <Button border size="xl">
+              Ver Mais
+            </Button>
+          </div>
+        )}
 
-        <div className="w-full bg-gray-200 h-0.5 mt-16"/>
+        <div className="w-full bg-gray-200 h-0.5 mt-16" />
       </Container>
     </section>
   );

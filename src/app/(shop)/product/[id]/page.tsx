@@ -1,4 +1,6 @@
 import Container from "@/components/layout/Container";
+import ProductContainer from "@/components/product/ProductContainer";
+import ProductDescription from "@/components/product/ProductDescription";
 import ProductDetails from "@/components/product/ProductDetails";
 import ProductImages from "@/components/product/ProductImages";
 
@@ -19,9 +21,20 @@ const Product = async ({ params }: { params: { id: string } }) => {
   return (
     <main>
       <Container className="mt-16 flex gap-8">
-        <ProductImages product={product}/>
-        <ProductDetails product={product}/>
+        <ProductImages product={product} />
+        <ProductDetails product={product} />
       </Container>
+      <Container className="mt-16">
+        <p className="font-bold text-xl">Descrição do produto</p>
+        <div className="w-full bg-gray-200 h-0.5 mt-4" />
+        <ProductDescription />
+      </Container>
+
+      <div className="mt-16 h-1" />
+      <ProductContainer
+        showMoreButton={false}
+        title="Você também pode gostar"
+      />
     </main>
   );
 };
