@@ -1,13 +1,14 @@
 import SplitBar from "../ui/SplitBar";
 import PriceFilter from "./PriceFilter";
 import CustomLink from "../ui/CustomLink";
+import FilterTitle from "./FilterTitle";
 
 const categoriesMock = ["T-Shirts", "Shorts", "Jeans", "Shirts"];
 
 const Filter = () => {
   return (
     <div className="border border-gray-400 flex-1/4 min-h-96 rounded-2xl p-2 flex flex-col gap-4">
-      <p>Filtros</p>
+      <FilterTitle title="Filtros"/>
       <SplitBar />
       <div className="flex flex-col gap-2">
         {categoriesMock.map((category) => (
