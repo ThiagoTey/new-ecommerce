@@ -4,18 +4,32 @@ import Link from "next/link";
 
 type Props = {
   product: ProductType;
+  small?: boolean;
 };
 
-const ProductCard = ({ product }: Props) => {
+const ProductCard = ({ product, small = false }: Props) => {
   return (
-    <div className="cursor-pointer rounded-2xl border-[1px] border-transparent hover:border-gray-700 p-2 transition-all">
+    <div
+      className={`cursor-pointer rounded-2xl p-2 transition-all duration-200 hover:scale-[102%] product_shadow hover:z-10 ${
+        small ? "lg:max-w-[250px]" : "lg:max-w-[300px]"
+      }`}
+    >
       <Link href={`/product/${product.id}`}>
-        <div className="relative w-[300px] h-[300px]">
+        {/* Imagem responsiva */}
+        <div
+          className={`relative w-full h-60 sm:h-72 md:h-80 ${
+            small ? "lg:w-[225px] lg:h-[225px]" : "lg:w-[300px] lg:h-[300px]"
+          }`}
+        >
           <ProductImage product={product} fill />
         </div>
-        <div className="max-w-[300px] max-h-[300px] flex flex-col gap-2 mt-2">
-          <p className="font-semibold text-xl">{product.title}</p>
-          <p className="font-bold text-2xl">R$ {product.price}</p>
+
+        {/* Informações do produto */}
+        <div className="flex flex-col gap-2 mt-2 text-center lg:text-left">
+          <p className="font-semibold text-lg sm:text-lg truncate">
+            {product.title}
+          </p>
+          <p className="font-bold text-xl sm:text-xl">R$ {product.price}</p>
         </div>
       </Link>
     </div>
