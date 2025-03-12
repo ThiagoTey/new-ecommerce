@@ -1,5 +1,6 @@
 import Filter from "@/components/filter/Filter";
 import Container from "@/components/layout/Container";
+import Pagination from "@/components/layout/Pagination";
 import ProductCard from "@/components/product/ProductCard";
 import { ProductType } from "@/types/ProductType";
 import React from "react";
@@ -27,6 +28,7 @@ const Products = async () => {
               <ProductCard small product={product} key={product.id} />
             ))}
           </div>
+          <Pagination />
         </div>
       </Container>
     </main>
