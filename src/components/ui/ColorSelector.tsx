@@ -14,7 +14,7 @@ const ColorSelector = (props: Props) => {
 
   return (
     <div>
-      <span>Cor : {colorsMock[colorIndex].name}</span>
+      <span className="font-medium text-xl">Cor : {colorsMock[colorIndex].name}</span>
       <div className="flex gap-2 mt-2">
         {colorsMock.map((color, index) => (
           <div

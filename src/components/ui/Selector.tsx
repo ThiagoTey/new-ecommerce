@@ -27,8 +27,8 @@ const Selector = ({ title }: Props) => {
 
   return (
     <div>
-      <p className="bg-">{title}</p>
-      <div className="flex gap-2 mt-2">
+      <p className="font-medium text-xl">{title}</p>
+      <div className="flex gap-2 mt-2 flex-wrap">
         {sizeMock.map((size, index) => (
           <Button
             onClick={() => setSelectedIndex(index)}

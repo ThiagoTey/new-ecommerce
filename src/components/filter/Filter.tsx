@@ -1,27 +1,25 @@
 import SplitBar from "../ui/SplitBar";
 import PriceFilter from "./PriceFilter";
-import CustomLink from "../ui/CustomLink";
 import FilterTitle from "./FilterTitle";
 import ColorFilter from "./ColorFilter";
-
-const categoriesMock = ["T-Shirts", "Shorts", "Jeans", "Shirts"];
+import Selector from "../ui/Selector";
+import Button from "../ui/Button";
+import CategoryFilter from "./CategoryFilter";
 
 const Filter = () => {
   return (
-    <div className="border border-gray-400 flex-1/4 min-h-96 rounded-2xl p-2 flex flex-col gap-4">
-      <FilterTitle title="Filtros"/>
+    <div className="border border-gray-400 flex-1/4 min-h-96 rounded-2xl p-2 flex flex-col gap-4 py-6">
+      <FilterTitle title="Filtros" />
       <SplitBar />
-      <div className="flex flex-col gap-2">
-        {categoriesMock.map((category) => (
-          <CustomLink className="text-base" key={category} href={"/products"}>
-            {category}
-          </CustomLink>
-        ))}
-      </div>
+      <CategoryFilter />
       <SplitBar />
       <PriceFilter />
       <SplitBar />
       <ColorFilter />
+      <SplitBar />
+      <Selector title="Tamanho" />
+      <SplitBar />
+      <Button black>Aplicar Filtros</Button>
     </div>
   );
 };
