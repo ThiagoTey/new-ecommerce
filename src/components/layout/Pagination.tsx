@@ -21,7 +21,7 @@ const Num = ({ num, selected = false, pageLength }: NumProps) => {
           ? "border-black border-r-2 border-2 bg-gray-200"
           : "border-gray-400"
       }
-      ${num == pageLength && "rounded-r-xl border-r"}
+      ${num == pageLength && "rounded-r-xl border-r-2"}
       `}
     >
       {num}
