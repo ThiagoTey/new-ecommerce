@@ -2,6 +2,7 @@ import SplitBar from "../ui/SplitBar";
 import PriceFilter from "./PriceFilter";
 import CustomLink from "../ui/CustomLink";
 import FilterTitle from "./FilterTitle";
+import ColorSelector from "../ui/ColorSelector";
 
 const categoriesMock = ["T-Shirts", "Shorts", "Jeans", "Shirts"];
 
@@ -20,6 +21,7 @@ const Filter = () => {
       <SplitBar />
       <PriceFilter />
       <SplitBar />
+      <ColorSelector />
     </div>
   );
 };
