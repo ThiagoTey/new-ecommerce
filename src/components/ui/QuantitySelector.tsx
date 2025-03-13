@@ -1,7 +1,10 @@
 "use client";
 import React, { useState } from "react";
 
-const QuantitySelector = () => {
+type QuantitySelectorProps = {
+}
+
+const QuantitySelector = ({} : QuantitySelectorProps) => {
   const [quantity, setQuantity] = useState(1);
 
   const handleDecrease = () => {
@@ -9,7 +12,7 @@ const QuantitySelector = () => {
   };
 
   return (
-    <div className="flex items-center gap-4 rounded-full bg-gray-200 px-4 py-2 w-fit">
+    <div className={`flex items-center gap-4 rounded-full bg-gray-200 px-4 py-2 w-fit`}>
       <button className="text-3xl" onClick={handleDecrease}>
         -
       </button>
