@@ -7,7 +7,7 @@ const CategoryFilter = () => {
     <div className="flex flex-col gap-2">
     {categoriesMock.map((category) => (
       <CustomLink className="text-base" key={category} href={"/products"}>
-        {category} teste
+        {category}
       </CustomLink>
     ))}
   </div>
