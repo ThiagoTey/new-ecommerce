@@ -1,3 +1,5 @@
+"use client"
+
 import { ProductType } from "@/types/ProductType";
 import React from "react";
 import Title from "../typography/Title";
@@ -6,12 +8,16 @@ import Selector from "../ui/Selector";
 import QuantitySelector from "../ui/QuantitySelector";
 import Button from "../ui/Button";
 import SplitBar from "../ui/SplitBar";
+import { useCartStore } from "@/store/cartStore";
 
 type ProductDetailsProps = {
   product: ProductType;
 };
 
 const ProductDetails = ({ product }: ProductDetailsProps) => {
+
+  const { addToCart } = useCartStore();
+
   return (
     <div className="flex flex-1/2 flex-col gap-3">
       <Title as="h1" size="xl">
@@ -28,9 +34,8 @@ const ProductDetails = ({ product }: ProductDetailsProps) => {
 
       <div className="flex w-full gap-2">
         <QuantitySelector />
-        <Button black className="w-full">
-          {" "}
-          Comprar{" "}
+        <Button black className="w-full" onClick={() => addToCart(product)}>
+          Comprar
         </Button>
       </div>
     </div>

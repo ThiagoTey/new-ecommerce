@@ -18,13 +18,13 @@ async function getProduct(productId: string) {
 
 const Product = async ({ params }: { params: { id: string } }) => {
   const product = await getProduct(params.id);
-  console.log(product);
   return (
     <main>
       <Container className="mt-16 flex gap-8">
         <ProductImages product={product} />
         <ProductDetails product={product} />
       </Container>
+      {/* Parte de baixo */}
       <Container className="mt-16">
         <p className="font-bold text-xl">Descrição do produto</p>
         <SplitBar />
