@@ -3,6 +3,7 @@ import { Montserrat, Poppins } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/layout/Footer";
 import Navbar from "@/components/layout/Navbar";
+import CartSidebar from "@/components/layout/CartSidebar";
 
 export const metadata: Metadata = {
   title: "Ecommerce",
@@ -30,6 +31,7 @@ export default function RootLayout({
       <body
         className={`${montserrat.variable} ${poppins.variable} antialiased`}
       >
+        <CartSidebar />
         <Navbar/>
         {children}
         <Footer/>
