@@ -1,18 +1,18 @@
 "use client"
 
-import { useState } from "react"
 import SplitBar from "../ui/SplitBar"
 import { useCartStore } from "@/store/cartStore"
+import { useCartSideBarStore } from "@/store/cartSideBarSote"
 
 const CartSidebar = () => {
 
-    const [isOpening, setIsOpening] = useState(true)
+    const {isOpening, setIsOpening} = useCartSideBarStore();
 
     const { cart } = useCartStore();
 
     return (
         // Container
-        <div className="z-10 w-full h-full fixed">
+        <div className={`z-10 w-full h-full fixed ${isOpening ? "block" : "hidden"}`}>
             <div className="w-full h-full bg-black/25" />
             {/* SideBar */}
             <div className="absolute right-0 top-0 h-full w-[500px] bg-white p-8 gap-4 flex flex-col">

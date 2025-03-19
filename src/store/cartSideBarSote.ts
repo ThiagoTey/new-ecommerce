@@ -2,11 +2,11 @@ import { create } from 'zustand';
 
 interface CartState {
     isOpening: boolean;
-    setOpening: () => void;
+    setIsOpening: (value : boolean) => void;
 }
 
 export const useCartSideBarStore = create<CartState>((set) => ({
     isOpening: false,
 
-    setOpening : () => set({isOpening : true})
+    setIsOpening : (value) => set({isOpening : value})
 }));

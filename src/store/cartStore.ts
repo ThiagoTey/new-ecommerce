@@ -20,33 +20,49 @@ export const useCartStore = create<CartState>()(persist(
 
         addToCart: (product) => {
             const existingProduct = get().cart.find((item) => item.id === product.id);
+            let newTotal = get().total;
             if (existingProduct) {
+                newTotal = product.price * product.quantity;
                 set({
+                    
                     cart: get().cart.map((item) =>
                         item.id === product.id ? { ...item, quantity: item.quantity + product.quantity } : item
                     ),
-                    total: get().cart.reduce((acc, item) => acc + item.price * item.quantity, 0)
+                    total: newTotal
                 });
             } else {
+                newTotal = product.price * product.quantity;
                 set({
                     cart: [...get().cart, product],
-                    total: get().cart.reduce((acc, item) => acc + item.price * item.quantity, 0)
+                    total: newTotal
                 });
             }
         },
 
         removeFromCart: (id) => {
+            const productToRemove = get().cart.find((item) => item.id === id);
+            let newTotal = get().total;
+            if(productToRemove) {
+                newTotal -= productToRemove.price * productToRemove?.quantity;
+            }
             set({
                 cart: get().cart.filter((item) => item.id !== id),
-                total: get().cart.reduce((acc, item) => acc + item.price * item.quantity, 0)
+                total: newTotal
             });
         },
 
         updateQuantity: (id, quantity) => {
-            set({
-                cart: get().cart.map((item) => item.id == id ? { ...item, quantity: Math.max(1, quantity) } : item),
-                total: get().cart.reduce((acc, item) => acc + item.price * item.quantity, 0)
-            });
+            const existingProduct = get().cart.find((item) => item.id === id);
+            if (existingProduct) {
+                const quantityDifference = Math.max(1, quantity) - existingProduct.quantity;
+                const newTotal = get().total + (existingProduct.price * quantityDifference);
+                set({
+                    cart: get().cart.map((item) =>
+                        item.id === id ? { ...item, quantity: Math.max(1, quantity) } : item
+                    ),
+                    total: newTotal
+                });
+            }
         },
 
         clearCart: () => set({ cart: [], total: 0 }),
@@ -54,7 +70,7 @@ export const useCartStore = create<CartState>()(persist(
     }),
     {
         name: 'cart-storage', // Nome para o localStorage
-        storage: createJSONStorage(() => sessionStorage), // Persiste no localStorage
+        storage: createJSONStorage(() => localStorage), // Persiste no localStorage
     }
 ))
 

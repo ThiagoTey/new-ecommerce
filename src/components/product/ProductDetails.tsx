@@ -18,6 +18,8 @@ const ProductDetails = ({ product }: ProductDetailsProps) => {
 
   const { addToCart } = useCartStore();
 
+  console.log(product)
+
   return (
     <div className="flex flex-1/2 flex-col gap-3">
       <Title as="h1" size="xl">
@@ -34,7 +36,7 @@ const ProductDetails = ({ product }: ProductDetailsProps) => {
 
       <div className="flex w-full gap-2">
         <QuantitySelector />
-        <Button black className="w-full" onClick={() => addToCart(product)}>
+        <Button black className="w-full" onClick={() => addToCart({...product, quantity: 1})}>
           Comprar
         </Button>
       </div>
