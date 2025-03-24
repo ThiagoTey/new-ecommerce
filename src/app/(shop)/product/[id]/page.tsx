@@ -17,7 +17,8 @@ async function getProduct(productId: string) {
 }
 
 const Product = async ({ params }: { params: { id: string } }) => {
-  const product = await getProduct(params.id);
+  const { id } = await params
+  const product = await getProduct(id);
   return (
     <main>
       <Container className="mt-16 flex gap-8">
