@@ -8,7 +8,8 @@ import Container from "./Container";
 const Navbar = () => {
   return (
     <nav className="bg-gray-100">
-      <Container className="w-full h-24  flex items-center gap-x-8">
+      {/* Desktop */}
+      <Container className="w-full h-24  items-center gap-x-8 hidden md:flex">
         <div>
           <Logo />
         </div>
@@ -19,6 +20,10 @@ const Navbar = () => {
         </div>
         <Search />
         <NavIcons />
+      </Container>
+      {/* Mobile */}
+      <Container>
+
       </Container>
     </nav>
   );

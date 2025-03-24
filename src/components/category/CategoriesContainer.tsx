@@ -2,6 +2,7 @@ import React from "react";
 import Container from "../layout/Container";
 import Category from "./Category";
 import Title from "../typography/Title";
+import { useWindowSize } from "@/hooks/useWindowSize";
 
 const mock = [
   { link: "/", title: "Casual", backgroundLink: "/casual.png" },
@@ -11,14 +12,18 @@ const mock = [
 ];
 
 const CategoriesContainer = () => {
+
+  const { width, height } = useWindowSize();
+
+
   return (
     <section className="mt-16">
       <Container>
-        <div className="bg-neutral-50 rounded-3xl py-16 px-28">
+        <div className="bg-neutral-50 rounded-3xl lg:py-16 lg:px-28">
           <Title as="h4" size="2xl" className="m-auto w-fit">
             NAVEGUE POR QUALQUER ESTILO
           </Title>
-          <div className="flex relative gap-x-[2%] flex-wrap mt-16 w-full gap-y-6">
+          <div className="md:flex relative gap-x-[2%] flex-wrap mt-16 w-full gap-y-6">
             {mock.map((category, index) => (
               <div
                 className={`h-[300px] relative overflow-hidden rounded-2xl transition-all ${

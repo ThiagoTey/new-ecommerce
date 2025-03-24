@@ -3,7 +3,7 @@ import React from "react";
 
 const Search = () => {
   return (
-    <form className="flex items-center justify-between gap-4 bg-gray-300 py-2 px-4 rounded-4xl flex-1">
+    <form className="flex items-center justify-between gap-2 md:gap-4 bg-gray-300 py-2 px-4 rounded-4xl flex-1">
         <Image
             width={24}
             height={24}

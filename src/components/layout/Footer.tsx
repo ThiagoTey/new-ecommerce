@@ -13,7 +13,7 @@ const DetailContainer: React.FC<{ children: React.ReactNode }> = ({
 const Footer = () => {
   return (
     <footer className="bg-gray-100">
-      <Container className="mt-28 w-full py-8 grid grid-cols-4 gap-20">
+      <Container className="mt-28 w-full py-8 grid grid-cols-2 md:grid-cols-4 gap-20">
         {/* Primeiro a esquerda */}
         <DetailContainer>
           <Logo />

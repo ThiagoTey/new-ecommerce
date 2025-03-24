@@ -8,13 +8,13 @@ type TitleProps = {
 }
 
 const sizeClasses = {
-    base : "",
-    xl : "text-3xl",
-    "2xl" : "text-5xl ",
+    base: "",
+    xl: "text-3xl",
+    "2xl": "md:text-5xl ",
 }
 
 const Title = ({ children, as: Tag = "h1", size = "base", className = "" }: TitleProps) => {
     return <Tag className={`font-extrabold text-gray-900 ${className} ${sizeClasses[size]}`}>{children}</Tag>;
-  };
+};
 
 export default Title

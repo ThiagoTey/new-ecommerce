@@ -8,10 +8,10 @@ import Image from "next/image";
 const HeroSlider = () => {
   const [isImageLoaded, setIsImageLoaded] = useState(false);
   return (
-    <section className="w-full h-[672px] bg-gray-200">
-      <Container className="grid-cols-2 grid h-full">
+    <section className="w-full lg:h-[672px] bg-gray-200">
+      <Container className="grid-cols-2 lg:grid flex flex-col h-full">
         <div className="flex flex-col justify-center gap-y-14 ">
-          <h2 className="text-6xl font-semibold">
+          <h2 className="lg:text-6xl sm:text-4xl text-2xl font-semibold">
             ENCONTRE ROUPAS QUE COMBINEM COM SEU ESTILO!
           </h2>
           <p className="text-gray-600 text-xl">
