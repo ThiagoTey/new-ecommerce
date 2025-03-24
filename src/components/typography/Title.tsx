@@ -10,7 +10,7 @@ type TitleProps = {
 const sizeClasses = {
     base: "",
     xl: "text-3xl",
-    "2xl": "md:text-5xl ",
+    "2xl": "text-2xl md:text-5xl ",
 }
 
 const Title = ({ children, as: Tag = "h1", size = "base", className = "" }: TitleProps) => {
