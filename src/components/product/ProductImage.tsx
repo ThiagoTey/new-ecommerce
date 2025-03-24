@@ -18,9 +18,9 @@ const ProductImage = ({ product, fill }: Props) => {
       src={product.image} 
       fill 
       alt={product.title} 
-      className={`object-contain 
+      className={`object-contain  aspect-square
       ${loading ? 'scale-110 blur-3xl grayscale'
-      : 'scale-100 blur-0 grayscale-0'
+      : 'scale-100 blur-0 grayscale-0 '
       }`} 
       onLoad={() => setLoading(false)}
     />
@@ -28,7 +28,7 @@ const ProductImage = ({ product, fill }: Props) => {
     <Image 
       src={product.image} 
       width={400}
-      height={700} 
+      height={400} 
       alt={product.title} 
       className={`object-contain 
       ${loading ? 'scale-110 blur-3xl grayscale'

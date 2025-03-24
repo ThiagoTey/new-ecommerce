@@ -33,7 +33,7 @@ const ProductContainer = async ({
           {title}
         </Title>
 
-        <div className="md:flex md:gap-5 justify-between mt-8">
+        <div className="grid grid-cols-2 gap-4 md:flex md:gap-5 justify-between mt-8">
           {products.slice(0, 4).map((product: ProductType) => (
             <ProductCard product={product} key={product.id} />
           ))}
