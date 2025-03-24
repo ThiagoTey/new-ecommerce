@@ -6,6 +6,7 @@ import { useCartSideBarStore } from "@/store/cartSideBarSote"
 import Image from "next/image"
 import QuantitySelector from "../ui/QuantitySelector"
 import Link from "next/link"
+import Button from "../ui/Button"
 
 const CartSidebar = () => {
 
@@ -15,15 +16,16 @@ const CartSidebar = () => {
 
     return (
         // Container
-        <div className={`z-10 w-full h-full fixed ${isOpening ? "block" : "hidden"}`}>
-            <div onClick={() => setIsOpening(false)} className="w-full h-full bg-black/25" />
+        <div className={`z-10 w-full h-full fixed ${isOpening ? "visible" : "invisible"}`}>
+            <div onClick={() => setIsOpening(false)} className={`w-full h-full ${isOpening ? "bg-black/25" : ""} transition-all`} />
             {/* SideBar */}
-            <div className="absolute right-0 top-0 h-full w-[500px] bg-white p-8 gap-4 flex flex-col">
+            <div className={`absolute transition-all h-full w-[500px] bg-white p-8 gap-4 flex top-0 flex-col ${isOpening ? "right-0" : "-right-[500px]"}`}>
                 <div className="flex justify-between">
                     <span className="font-medium text-xl">Seu carrinho</span>
                     <button className="cursor-pointer" onClick={() => setIsOpening(false)}>X</button>
                 </div>
                 <SplitBar />
+                {/* Produtos */}
                 <div className="flex flex-col gap-8">
                     {cart.map((product) => (
                         <div key={product.id} className="flex gap-4 text-sm font-light">
@@ -46,9 +48,11 @@ const CartSidebar = () => {
                         </div>
                     ))}
                 </div>
+                {/* Botao de finalziar compra */}
+                <Link className="mt-auto w-full" href={"/cart"}>
+                    <Button className="w-full" black>Finalizar Compra</Button>
+                </Link>
             </div>
-
-
         </div>
     )
 }
