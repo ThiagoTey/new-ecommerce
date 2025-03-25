@@ -4,6 +4,7 @@ import Search from "./Search";
 import NavIcons from "./NavIcons";
 import Logo from "../ui/Logo";
 import Container from "./Container";
+import CartIcon from "../ui/CartIcon";
 
 const Navbar = () => {
   return (
@@ -22,9 +23,20 @@ const Navbar = () => {
         <NavIcons />
       </Container>
       {/* Mobile */}
-      <Container>
-
+      <Container className="pt-4">
+        <div className="flex justify-between">
+          {/* Hamburguer */}
+          <div> ||| </div>
+          {/* Logo */}
+          <Logo />
+          {/* Carrinho */}
+          <CartIcon />
+        </div>
       </Container>
+      {/* Pesquisa */}
+      <div className="py-2">
+        <Search />
+      </div>
     </nav>
   );
 };
