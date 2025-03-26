@@ -8,23 +8,16 @@ import Title from "../typography/Title";
 type ProductContainerProps = {
   title: string;
   showMoreButton?: boolean;
+  products: ProductType[];
 };
 
-async function getProducts() {
-  const res = await fetch("https://fakestoreapi.com/products");
 
-  if (!res.ok) {
-    throw new Error("Failed to fetch data");
-  }
 
-  return res.json();
-}
-
-const ProductContainer = async ({
+const ProductContainer = ({
   title,
   showMoreButton = true,
+  products
 }: ProductContainerProps) => {
-  const products = await getProducts();
 
   return (
     <section className="mt-16">
@@ -33,8 +26,10 @@ const ProductContainer = async ({
           {title}
         </Title>
 
-        <div className="grid grid-cols-2 gap-4 md:flex md:gap-5 justify-between mt-8">
-          {products.slice(0, 4).map((product: ProductType) => (
+        <div
+          className={`grid grid-cols-2 gap-4 lg:grid-cols-4 lg:gap-5 lg:gap-y-12 justify-between mt-8 w-full h-full`}
+        >
+          {products.map((product: ProductType) => (
             <ProductCard product={product} key={product.id} />
           ))}
         </div>
