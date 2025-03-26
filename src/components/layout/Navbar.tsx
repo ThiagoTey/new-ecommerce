@@ -10,7 +10,7 @@ const Navbar = () => {
   return (
     <nav className="bg-gray-100">
       {/* Desktop */}
-      <Container className="w-full h-24  items-center gap-x-8 hidden md:flex">
+      <Container className="w-full h-24 items-center gap-x-8 hidden lg:flex">
         <div>
           <Logo />
         </div>
@@ -23,19 +23,21 @@ const Navbar = () => {
         <NavIcons />
       </Container>
       {/* Mobile */}
-      <Container className="pt-4">
-        <div className="flex justify-between">
-          {/* Hamburguer */}
-          <div> ||| </div>
-          {/* Logo */}
-          <Logo />
-          {/* Carrinho */}
-          <CartIcon />
+      <div className="lg:hidden">
+        <Container className="pt-4 ">
+          <div className="flex justify-between">
+            {/* Hamburguer */}
+            <div> ||| </div>
+            {/* Logo */}
+            <Logo />
+            {/* Carrinho */}
+            <CartIcon />
+          </div>
+        </Container>
+        {/* Pesquisa */}
+        <div className="py-2">
+          <Search />
         </div>
-      </Container>
-      {/* Pesquisa */}
-      <div className="py-2">
-        <Search />
       </div>
     </nav>
   );
