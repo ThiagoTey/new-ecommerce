@@ -11,7 +11,7 @@ const HeroSlider = () => {
     <section className="w-full lg:h-[672px] bg-gray-200">
       <Container className="pt-8 lg:pt-0 grid-cols-2 lg:grid flex flex-col h-full">
         <div className="flex flex-col justify-center gap-y-2 lg:gap-y-14 ">
-          <h2 className="lg:text-6xl sm:text-4xl text-3xl font-semibold">
+          <h2 className="lg:text-6xl sm:text-4xl text-3xl font-extrabold">
             ENCONTRE ROUPAS QUE COMBINEM COM SEU ESTILO!
           </h2>
           <p className="text-gray-600 font-light lg:text-xl">

@@ -40,7 +40,7 @@ const ProductSlider = ({ products, title, showMoreButton }: Props) => {
         <div className="relative">
           <button
             onClick={handlePrev}
-            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-gray-200 p-2 rounded-full shadow-lg hover:bg-gray-300 transition"
+            className="hidden md:block absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-gray-200 p-2 rounded-full shadow-lg hover:bg-gray-300 transition"
           >
             ◀
           </button>
@@ -60,7 +60,7 @@ const ProductSlider = ({ products, title, showMoreButton }: Props) => {
           </div>
           <button
             onClick={handleNext}
-            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-gray-200 p-2 rounded-full shadow-lg hover:bg-gray-300 transition"
+            className="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-gray-200 p-2 rounded-full shadow-lg hover:bg-gray-300 transition"
           >
             ▶
           </button>
