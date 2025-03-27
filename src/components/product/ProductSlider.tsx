@@ -1,7 +1,7 @@
 "use client";
 
 import { ProductType } from "@/types/ProductType";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef } from "react";
 import Container from "../layout/Container";
 import Title from "../typography/Title";
 import Button from "../ui/Button";
@@ -36,7 +36,7 @@ const ProductSlider = ({ products, title, showMoreButton }: Props) => {
         <Title as="h3" size="2xl" className="w-fit m-auto">
           {title}
         </Title>
-        {/* Conteudo do slider */}
+        {/* Conteúdo do slider */}
         <div className="relative">
           <button
             onClick={handlePrev}

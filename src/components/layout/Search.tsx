@@ -1,11 +1,9 @@
 "use client";
 
-import { useWindowSize } from "@/hooks/useWindowSize";
 import Image from "next/image";
 import React from "react";
 
 const Search = () => {
-
 
   return (
     <form className="flex items-center justify-between gap-2  md:gap-4 border-gray-300 border lg:border-0 lg:bg-gray-300 py-2 px-4 lg:rounded-4xl flex-1">

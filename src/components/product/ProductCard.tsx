@@ -10,14 +10,14 @@ type Props = {
 const ProductCard = ({ product, small = false }: Props) => {
   return (
     <div
-      className={`h-full cursor-pointer rounded-2xl p-2 transition-all duration-200 hover:scale-[102%] product_shadow flex flex-col ${
+      className={`h-full cursor-pointer rounded-2xl p-2 transition-all duration-200 product_shadow flex flex-col ${
         small ? "lg:max-w-[250px]" : "lg:max-w-[280px]"
       }`}
     >
       <Link href={`/product/${product.id}`}>
         {/* Imagem responsiva */}
         <div
-          className={`relative aspect-square w-full  ${
+          className={`relative aspect-square w-full ${
             small ? "lg:w-[225px]" : "lg:w-full"
           } `}
           style={{ aspectRatio: "1 / 1" }}

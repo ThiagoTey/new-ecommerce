@@ -5,6 +5,7 @@ import NavIcons from "./NavIcons";
 import Logo from "../ui/Logo";
 import Container from "./Container";
 import CartIcon from "../ui/CartIcon";
+import NavSidebar from "./NavSidebar";
 
 const Navbar = () => {
   return (
@@ -27,7 +28,7 @@ const Navbar = () => {
         <Container className="pt-4 ">
           <div className="flex justify-between">
             {/* Hamburguer */}
-            <div> ||| </div>
+            <NavSidebar />
             {/* Logo */}
             <Logo />
             {/* Carrinho */}
