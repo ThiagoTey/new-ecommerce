@@ -11,17 +11,21 @@ const Navbar = () => {
   return (
     <nav className="bg-gray-100">
       {/* Desktop */}
-      <Container className="w-full h-24 items-center gap-x-8 hidden lg:flex">
-        <div>
-          <Logo />
+      <Container className="w-full h-28 gap-4 hidden lg:flex justify-center flex-col">
+        <div className="flex w-full items-center gap-x-8">
+          <div>
+            <Logo />
+          </div>
+          <Search />
+          <NavIcons />
         </div>
-        <div className="gap-x-4 flex font-medium">
+        <div className="flex gap-x-8">
           <Link href={"/"}>Inicio</Link>
-          <Link href={"/"}>Comprar</Link>
+          <Link href={"/products"}>Comprar</Link>
           <Link href={"/"}>Mais Vendidos</Link>
+          <Link href={"/"}>Moda Masculina</Link>
+          <Link href={"/"}>Esportes Lazer</Link>
         </div>
-        <Search />
-        <NavIcons />
       </Container>
       {/* Mobile */}
       <div className="lg:hidden">
