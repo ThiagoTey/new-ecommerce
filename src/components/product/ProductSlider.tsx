@@ -52,7 +52,7 @@ const ProductSlider = ({ products, title, showMoreButton }: Props) => {
             {products.map((product: ProductType) => (
               <div
                 key={product.id}
-                className="flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-[23%]"
+                className="flex-shrink-0 w-1/2 sm:w-1/2 md:w-1/3 lg:w-[23%]"
               >
                 <ProductCard product={product} />
               </div>

@@ -27,7 +27,7 @@ const Products = async () => {
          <p className="font-semibold text-2xl">Casual</p>
          <p>16 Produtos</p>
         </div>
-          <div className="flex flex-wrap justify-around mt-8">
+          <div className="flex gap-y-4 flex-wrap justify-around mt-8">
             {products.slice(0,9).map((product: ProductType) => (
               <ProductCard small product={product} key={product.id} />
             ))}

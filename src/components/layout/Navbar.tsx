@@ -19,17 +19,18 @@ const Navbar = () => {
           <Search />
           <NavIcons />
         </div>
-        <div className="flex gap-x-8">
-          <Link href={"/"}>Inicio</Link>
+        <div className="flex justify-between">
+          <span className="font-semibold">Todas Categorias</span>
           <Link href={"/products"}>Comprar</Link>
           <Link href={"/"}>Mais Vendidos</Link>
           <Link href={"/"}>Moda Masculina</Link>
           <Link href={"/"}>Esportes Lazer</Link>
+          <Link href={"/"}>Eletrônicos</Link>
         </div>
       </Container>
       {/* Mobile */}
-      <div className="lg:hidden">
-        <Container className="pt-4 ">
+      <div className="lg:hidden px-2">
+        <Container className="pt-4">
           <div className="flex justify-between">
             {/* Hamburguer */}
             <NavSidebar />

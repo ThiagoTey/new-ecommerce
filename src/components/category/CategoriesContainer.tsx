@@ -8,11 +8,6 @@ const mock = [
   { link: "/", title: "Formal", backgroundLink: "/formal.webp" },
   { link: "/", title: "Festa", backgroundLink: "/party.png" },
   { link: "/", title: "Academia", backgroundLink: "/gym.png" },
-  { link: "/", title: "Academia2", backgroundLink: "/gym.png" },
-  { link: "/", title: "Academia3", backgroundLink: "/gym.png" },
-  { link: "/", title: "Academia4", backgroundLink: "/gym.png" },
-  { link: "/", title: "Academia5", backgroundLink: "/gym.png" },
-  { link: "/", title: "Academia6", backgroundLink: "/gym.png" }
 ];
 
 const CategoriesContainer = () => {
@@ -28,9 +23,11 @@ const CategoriesContainer = () => {
           >
             NAVEGUE POR QUALQUER ESTILO
           </Title>
-          <div style={{gridTemplateRows  : "repeat(4, 1fr)"}} className="mt-4 md:mt-0 md:grid">
+          <div
+            style={{ gridTemplateRows: "repeat(4, 1fr)" }}
+            className="mt-4 md:mt-0 md:grid gap-1"
+          >
             {mock.map((category, index) => {
-
               teste++;
               if (teste === 5) {
                 teste = 1;
@@ -39,7 +36,9 @@ const CategoriesContainer = () => {
               return (
                 <div
                   className={`h-[300px] relative overflow-hidden rounded-md transition-all  ${
-                    (index + 1 === mock.length && index%2 === 0 ) ? "lastDiv" : `div${teste}`
+                    index + 1 === mock.length && index % 2 === 0
+                      ? "lastDiv"
+                      : `div${teste}`
                   }`}
                   key={category.title}
                 >
